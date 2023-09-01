@@ -1,0 +1,28 @@
+{
+	"name":"Hide Whatsapp Sidebar",
+	"version":"1.0",
+	"manifest_version": 3,
+	"permissions": ["scripting", "activeTab"],
+	"icons": {
+		 "10":"images/arroww.png",
+		 "12":"images/image3.jpeg"
+	 },
+	"content_scripts": [
+    {
+      "run_at": "document_end",
+      "js": ["scripts/content.js"],
+      "matches": [
+        "https://web.whatsapp.com/"
+
+      ]
+    }
+  ],
+  
+"web_accessible_resources": [{ 
+  "resources": ["/images/arroww.png"],
+  "matches": ["http://*/*", "https://*/*"]
+}],
+	"action": {
+    "default_popup": "popup.html"
+  }
+}
